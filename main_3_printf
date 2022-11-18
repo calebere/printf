@@ -1,0 +1,65 @@
+.TH _PRINTF 3 "18 November, 2022" "0.1" "ALX software engineering C - _printf man page"
+
+.SH NAME
+_printf \- Print formated input
+
+.SH SYNOPSIS
+.B #include "main.h"
+
+.LP
+.B int printf(const char *, ...);
+
+.SH DESCRIPTION
+.B _printf()
+Takes any argument and prints it according to each format specified. The function writes under the control of a format string that specifies how subsequent arguments (accessed via the variable-length argument facilities of stdarg) are converted for output.
+
+.br Return Value
+.in +2n
+When successful, _printf() returns the number of characters printed (excluding the null byte used to end output to strings).
+
+If an output error is encountered, -1 is returned.
+.in
+
+.PP
+.B FORMAT:
+.br
+Use the operator % and add any option:
+.br
+%c - for printing a single character -
+.br
+%s - for printing a string -
+.br
+%i - for printing an integer -
+.br
+%d - for printing a decimal -
+.br
+%b - for printing an unsigned integer as a binary number -
+.br
+%u - for printing an unsigned integer -
+
+.SH SOME EXAMPLES
+To print:
+.PP
+.RS 3
+.B #include "main.h"
+.PP
+_printf("Hello World");
+.B // the output will be 'Hello World'
+.PP
+_printf("%c", 'H');
+.B // the ouput will be 'H'
+.PP
+_printf("%s", "Hello World");
+.B // the output will be 'Hello World'
+.RE
+
+.SH SEE ALSO
+putchar(3), printf(3)
+
+.SH BUGS
+long and short unsigned int aren't producing the expected result yet. and the custome conversion of r and R aren't working.
+
+The _printf() function emulates the workings of the C standard library function printf().
+
+.SH AUTHOR
+Caleb Amadi
